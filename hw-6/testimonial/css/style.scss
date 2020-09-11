@@ -58,6 +58,7 @@ h1 {
             height: 100%;
             @include border;
             @include flex-column-centered;
+            justify-content: flex-start;
             padding: 60px 20px;
             transition: 0.5s;
 
