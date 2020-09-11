@@ -106,6 +106,7 @@ body * {
   padding: 0 64px;
   /* Макеты баннеров */
   /* Макеты блоков со статьями */
+  /* Ссылки на соц. сети */
 }
 
 .main .main__banner {
@@ -144,17 +145,17 @@ body * {
 .main .main__banner .main__banner-body .main__banner-body-button {
   background: #000;
   color: #fff;
-  width: 200px;
+  width: 150px;
   text-align: center;
-  padding: 20px 20px;
+  padding: 10px 20px;
   text-decoration: none;
 }
 
 .main .main__banner .main__banner-body .main__banner-body-button span {
   font-size: 15px;
   font-weight: 700;
-  -right: 5px;
-  padding-bottom: 3px;
+  margin-right: 5px;
+  padding-bottom: 1px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -162,5 +163,71 @@ body * {
 .main .main__banner .main__banner-body .main__banner-body-button:hover span {
   border-bottom: 2px solid #fff;
   margin-right: 10px;
+}
+
+.main .main__articles {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.main .main__articles .main__articles-card {
+  width: 265px;
+}
+
+.main .main__articles .main__articles-card .main__articles-card-image {
+  width: 265px;
+}
+
+.main .main__articles .main__articles-card .main__articles-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 40px;
+  line-height: 28px;
+}
+
+.main .main__articles .main__articles-card .main__articles-card-text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 18px;
+  margin: 5px 0 10px 0;
+}
+
+.main .main__articles .main__articles-card .main__articles-card-link {
+  text-decoration: none;
+  color: #0067b8;
+}
+
+.main .main__articles .main__articles-card .main__articles-card-link span {
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 5px;
+  padding-bottom: 1px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.main .main__articles .main__articles-card .main__articles-card-link:hover span {
+  border-bottom: 2px solid #0067b8;
+  margin-right: 10px;
+}
+
+.main .main__title-for-work {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.main .main__social {
+  margin-bottom: 50px;
+}
+
+.main .main__social .main__social-link {
+  margin-left: 20px;
 }
 /*# sourceMappingURL=style.css.map */

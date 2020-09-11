@@ -150,16 +150,16 @@ body * {
             .main__banner-body-button {
                 background: #000;
                 color: #fff;
-                width: 200px;
+                width: 150px;
                 text-align: center;
-                padding: 20px 20px;
+                padding: 10px 20px;
                 text-decoration: none;
 
                 span {
                     font-size: 15px;
                     font-weight: 700;
-                    -right: 5px;
-                    padding-bottom: 3px;
+                    margin-right: 5px;
+                    padding-bottom: 1px;
                     transition: 0.2s;
                 }
             }
@@ -173,7 +173,68 @@ body * {
     }
 
     /* Макеты блоков со статьями */
-    
+
+    .main__articles {
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 50px;
+
+        .main__articles-card {
+            width: 265px;
+
+            .main__articles-card-image {
+                width: 265px;
+            }
+
+            .main__articles-card-title {
+                font-size: 20px;
+                font-weight: 600;
+                margin-top: 40px;
+                line-height: 28px;
+            }
+
+            .main__articles-card-text {
+                font-size: 15px;
+                font-weight: 300;
+                line-height: 18px;
+                margin: 5px 0 10px 0;
+            }
+
+            .main__articles-card-link {
+                text-decoration: none;
+                color: #0067b8;
 
 
+                span {
+                    font-weight: 600;
+                    font-size: 15px;
+                    margin-right: 5px;
+                    padding-bottom: 1px;
+                    transition: 0.2s;
+                }
+            }
+
+            .main__articles-card-link:hover span {
+                border-bottom: 2px solid #0067b8;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .main__title-for-work {
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    /* Ссылки на соц. сети */
+
+    .main__social {
+        margin-bottom: 50px;
+
+        .main__social-link {
+            margin-left: 20px;
+        }
+    }
 }
