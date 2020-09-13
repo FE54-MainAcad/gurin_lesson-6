@@ -1,5 +1,38 @@
 @charset "UTF-8";
 /* Переменные */
+/* Шаблоны */
+.header, .main, .footer {
+  padding: 0 64px;
+}
+
+.header .header__nav .header__nav-menu .header__nav-menu-item .header__nav-menu-item-link, .header .header__products-n-tools .header__products {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #262626;
+  font-size: 13px;
+}
+
+.header .header__products-n-tools .header__tools .header__tools-link {
+  width: 13px;
+  height: 13px;
+  padding: 10px;
+  text-decoration: none;
+  color: #262626;
+  font-size: 13px;
+}
+
+.header .header__nav .header__nav-menu .header__nav-menu-item .header__nav-menu-item-link:hover, .header .header__products-n-tools .header__products:hover .underline {
+  border-bottom: 2px solid #262626;
+  padding-bottom: 3px;
+}
+
+.footer .footer__menus .footer__menus_menu .footer__menus_menu-items .footer__menus_menu-items_item .footer__menus_menu-items_item-link, .footer .footer__last-line ul .footer__last-line-item, .footer .footer__last-line ul .footer__last-line-item .footer__last-line-item-link {
+  font-size: 11px;
+  line-height: 16px;
+  color: #616161;
+  text-decoration: none;
+}
+
 /* Миксины */
 /* Всем шрифт!!!!!!!!! */
 @font-face {
@@ -44,7 +77,6 @@ body * {
 
 /* Макет хедера сайта */
 .header {
-  padding: 0 64px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -59,42 +91,12 @@ body * {
   padding-left: 10px;
 }
 
-.header .header__nav .header__nav-menu .header__nav-menu-item .header__nav-menu-item-link {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #262626;
-  font-size: 13px;
-}
-
-.header .header__nav .header__nav-menu .header__nav-menu-item .header__nav-menu-item-link:hover {
-  border-bottom: 2px solid #262626;
-  padding-bottom: 3px;
-}
-
 .header .header__products-n-tools {
   padding-right: 16px;
 }
 
 .header .header__products-n-tools .header__products {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #262626;
-  font-size: 13px;
   margin-right: 36px;
-}
-
-.header .header__products-n-tools .header__products:hover .underline {
-  border-bottom: 2px solid #262626;
-  padding-bottom: 3px;
-}
-
-.header .header__products-n-tools .header__tools .header__tools-link {
-  width: 13px;
-  height: 13px;
-  padding: 10px;
-  text-decoration: none;
-  color: #262626;
-  font-size: 13px;
 }
 
 /* Макет тела сайта */
@@ -110,13 +112,6 @@ body * {
   background-position: 75% 90%;
   background-size: 35%;
   background-repeat: no-repeat;
-}
-
-.main {
-  padding: 0 64px;
-  /* Макеты баннеров */
-  /* Макеты блоков со статьями */
-  /* Ссылки на соц. сети */
 }
 
 .main .main__banner {
@@ -141,14 +136,14 @@ body * {
 
 .main .main__banner .main__banner-body .main__banner-body-title {
   font-size: 24px;
-  line-height: 28px;
   font-weight: 600;
+  line-height: 28px;
 }
 
 .main .main__banner .main__banner-body .main__banner-body-text {
   font-size: 15px;
-  line-height: 20px;
   font-weight: 400;
+  line-height: 20px;
   margin: 24px 0;
 }
 
@@ -164,6 +159,7 @@ body * {
 .main .main__banner .main__banner-body .main__banner-body-button span {
   font-size: 15px;
   font-weight: 700;
+  line-height: inherit;
   margin-right: 5px;
   padding-bottom: 1px;
   -webkit-transition: 0.2s;
@@ -197,8 +193,8 @@ body * {
 .main .main__articles .main__articles-card .main__articles-card-title {
   font-size: 20px;
   font-weight: 600;
-  margin-top: 40px;
   line-height: 28px;
+  margin-top: 40px;
 }
 
 .main .main__articles .main__articles-card .main__articles-card-text {
@@ -214,8 +210,9 @@ body * {
 }
 
 .main .main__articles .main__articles-card .main__articles-card-link span {
-  font-weight: 600;
   font-size: 15px;
+  font-weight: 600;
+  line-height: inherit;
   margin-right: 5px;
   padding-bottom: 1px;
   -webkit-transition: 0.2s;
@@ -233,8 +230,8 @@ body * {
 
 .main .main__title-for-work {
   font-size: 24px;
-  line-height: 28px;
   font-weight: 600;
+  line-height: 28px;
   margin-bottom: 20px;
 }
 
@@ -243,8 +240,9 @@ body * {
 }
 
 .main .main__social .main__social-text {
-  font-weight: 200;
   font-size: 15px;
+  font-weight: 200;
+  line-height: inherit;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -266,7 +264,6 @@ body * {
 /* Футер сайта */
 .footer {
   background: #F3F3F3;
-  padding: 0 64px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -290,20 +287,13 @@ body * {
 
 .footer .footer__menus .footer__menus_menu .footer__menus_menu-title {
   font-size: 15px;
+  font-weight: 600;
   line-height: 20px;
   color: #616161;
-  font-weight: 600;
 }
 
 .footer .footer__menus .footer__menus_menu .footer__menus_menu-items .footer__menus_menu-items_item {
   padding-top: 14px;
-}
-
-.footer .footer__menus .footer__menus_menu .footer__menus_menu-items .footer__menus_menu-items_item .footer__menus_menu-items_item-link {
-  font-size: 11px;
-  line-height: 16px;
-  color: #616161;
-  text-decoration: none;
 }
 
 .footer .footer__menus .footer__menus_menu .footer__menus_menu-items .footer__menus_menu-items_item .footer__menus_menu-items_item-link:hover {
@@ -321,18 +311,7 @@ body * {
 }
 
 .footer .footer__last-line ul .footer__last-line-item {
-  font-size: 11px;
-  line-height: 16px;
-  color: #616161;
-  text-decoration: none;
   margin-left: 30px;
-}
-
-.footer .footer__last-line ul .footer__last-line-item .footer__last-line-item-link {
-  font-size: 11px;
-  line-height: 16px;
-  color: #616161;
-  text-decoration: none;
 }
 
 .footer .footer__last-line ul .footer__last-line-item .footer__last-line-item-link:hover {

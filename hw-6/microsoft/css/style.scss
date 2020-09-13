@@ -3,20 +3,20 @@
 $grey: #262626;
 $background: #F3F3F3;
 
-/* Миксины */
+/* Шаблоны */
 
-@mixin padding {
+%padding {
     padding: 0 64px;  
 }
 
-@mixin nav-link {
+%nav-link {
     margin: 0 10px;
     text-decoration: none;
     color: $grey;
     font-size: 13px;
 }
 
-@mixin nav-link-icons {
+%nav-link-icons {
     width: 13px;
     height: 13px;
     padding: 10px;
@@ -25,16 +25,24 @@ $background: #F3F3F3;
     font-size: 13px;
 }
 
-@mixin nav-link-hover {
+%nav-link-hover {
     border-bottom: 2px solid $grey;
     padding-bottom: 3px;
 }
 
-@mixin footer-link {
+%footer-link {
     font-size: 11px;
     line-height: 16px;
     color: #616161;
     text-decoration: none;
+}
+
+/* Миксины */
+
+@mixin font($fs, $fw, $lh) {
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
 }
 
 /* Всем шрифт!!!!!!!!! */
@@ -71,7 +79,7 @@ body * {
 /* Макет хедера сайта */
 
 .header {
-    @include padding;
+    @extend %padding;
     justify-content: space-between;
 
     .header__logo-n-nav {
@@ -89,11 +97,11 @@ body * {
         .header__nav-menu {
             .header__nav-menu-item {
                 .header__nav-menu-item-link {
-                    @include nav-link;
+                    @extend %nav-link;
                 }
 
                 .header__nav-menu-item-link:hover {
-                    @include nav-link-hover;
+                    @extend %nav-link-hover;
                 }
             }
         }
@@ -103,17 +111,17 @@ body * {
         padding-right: 16px;
 
         .header__products {
-            @include nav-link;
+            @extend %nav-link;
             margin-right: 36px;
         }
 
         .header__products:hover .underline {
-            @include nav-link-hover;
+            @extend %nav-link-hover;
         }
 
         .header__tools {
             .header__tools-link {
-                @include nav-link-icons;
+                @extend %nav-link-icons;
             }
         }
     }
@@ -136,8 +144,7 @@ body * {
 }
 
 .main {
-    @include padding;
-    /* Макеты баннеров */
+    @extend %padding;
     .main__banner {
         background: $background;
         margin-bottom: 50px;
@@ -150,15 +157,11 @@ body * {
             justify-content: center;
 
             .main__banner-body-title {
-                font-size: 24px;
-                line-height: 28px;
-                font-weight: 600;
+                @include font(24px, 600, 28px);
             }
 
             .main__banner-body-text {
-                font-size: 15px;
-                line-height: 20px;
-                font-weight: 400;
+                @include font(15px, 400, 20px);
                 margin: 24px 0;
             }
 
@@ -171,8 +174,7 @@ body * {
                 text-decoration: none;
 
                 span {
-                    font-size: 15px;
-                    font-weight: 700;
+                    @include font(15px, 700, inherit);
                     margin-right: 5px;
                     padding-bottom: 1px;
                     transition: 0.2s;
@@ -186,8 +188,6 @@ body * {
 
         }
     }
-
-    /* Макеты блоков со статьями */
 
     .main__articles {
         justify-content: space-between;
@@ -203,16 +203,12 @@ body * {
             }
 
             .main__articles-card-title {
-                font-size: 20px;
-                font-weight: 600;
+                @include font(20px, 600, 28px);
                 margin-top: 40px;
-                line-height: 28px;
             }
 
             .main__articles-card-text {
-                font-size: 15px;
-                font-weight: 300;
-                line-height: 18px;
+                @include font(15px, 300, 18px);
                 margin: 5px 0 10px 0;
             }
 
@@ -222,8 +218,7 @@ body * {
 
 
                 span {
-                    font-weight: 600;
-                    font-size: 15px;
+                    @include font(15px, 600, inherit);
                     margin-right: 5px;
                     padding-bottom: 1px;
                     transition: 0.2s;
@@ -244,20 +239,15 @@ body * {
     }
 
     .main__title-for-work {
-        font-size: 24px;
-        line-height: 28px;
-        font-weight: 600;
+        @include font(24px, 600, 28px);
         margin-bottom: 20px;
     }
-
-    /* Ссылки на соц. сети */
 
     .main__social {
         margin-bottom: 50px;
 
         .main__social-text {
-            font-weight: 200;
-            font-size: 15px;
+            @include font(15px, 200, inherit);
             color: rgba(0,0,0,.6);
         }
 
@@ -283,7 +273,7 @@ body * {
 
 .footer {
     background: $background;
-    @include padding;
+    @extend %padding;
     justify-content: flex-start;
     word-wrap: break-word;
 
@@ -297,10 +287,8 @@ body * {
             width: 150px;
 
             .footer__menus_menu-title {
-                font-size: 15px;
-                line-height: 20px;
+                @include font(15px, 600, 20px);
                 color: #616161;
-                font-weight: 600;
             }
 
             .footer__menus_menu-items {
@@ -308,7 +296,7 @@ body * {
                     padding-top: 14px;
 
                     .footer__menus_menu-items_item-link {
-                        @include footer-link;
+                        @extend %footer-link;
                     }
 
                     .footer__menus_menu-items_item-link:hover {
@@ -326,11 +314,11 @@ body * {
             justify-content: flex-end;
 
             .footer__last-line-item {
-                @include footer-link;
+                @extend %footer-link;
                 margin-left: 30px;
 
                 .footer__last-line-item-link {
-                    @include footer-link;
+                    @extend %footer-link;
                 }
 
                 .footer__last-line-item-link:hover {
