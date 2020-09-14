@@ -1,0 +1,340 @@
+/* Переменные */
+
+$grey: #262626;
+$background: #F3F3F3;
+
+/* Шаблоны */
+
+%padding {
+    padding: 0 64px;  
+}
+
+%nav-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: $grey;
+    font-size: 13px;
+}
+
+%nav-link-icons {
+    width: 13px;
+    height: 13px;
+    padding: 10px;
+    text-decoration: none;
+    color: $grey;
+    font-size: 13px;
+}
+
+%nav-link-hover {
+    border-bottom: 2px solid $grey;
+    padding-bottom: 3px;
+}
+
+%footer-link {
+    font-size: 11px;
+    line-height: 16px;
+    color: #616161;
+    text-decoration: none;
+}
+
+/* Миксины */
+
+@mixin font($fs, $fw, $lh) {
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+/* Всем шрифт!!!!!!!!!! */
+
+@font-face{
+    font-family: 'Segoe';
+    src: url('../fonts/segoe.ttf') format('truetype');
+}
+
+body * {
+    font-family: 'Segoe', Tahoma, sans-serif;
+    font-weight: 200;
+}
+
+/* Дополнительные классы типовой стилизации */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.rounded {
+    border: 1px solid $grey;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Макет хедера сайта */
+
+.header {
+    @extend %padding;
+    justify-content: space-between;
+
+    .header__logo-n-nav {
+        a {
+            .header__logo {
+                width: 107px;
+                padding: 16px 12px 16px 10px;
+            }
+        }
+    }
+
+    .header__nav {
+        padding-left: 10px;
+
+        .header__nav-menu {
+            .header__nav-menu-item {
+                .header__nav-menu-item-link {
+                    @extend %nav-link;
+                }
+
+                .header__nav-menu-item-link:hover {
+                    @extend %nav-link-hover;
+                }
+            }
+        }
+    }
+
+    .header__products-n-tools {
+        padding-right: 16px;
+
+        .header__products {
+            @extend %nav-link;
+            margin-right: 36px;
+        }
+
+        .header__products:hover .underline {
+            @extend %nav-link-hover;
+        }
+
+        .header__tools {
+            .header__tools-link {
+                @extend %nav-link-icons;
+            }
+        }
+    }
+}
+
+/* Макет тела сайта */
+
+.banner-1 {
+    background: url(../img/pumb-notebook.png);
+    background-position: 85% 70%;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+
+.banner-2 {
+    background: url(../img/unnamed.png);
+    background-position: 75% 90%;
+    background-size: 35%;
+    background-repeat: no-repeat;
+}
+
+.main {
+    @extend %padding;
+    .main__banner {
+        background: $background;
+        margin-bottom: 50px;
+
+        .main__banner-body {
+            height: 420px;
+            padding-left: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .main__banner-body-title {
+                @include font(24px, 600, 28px);
+            }
+
+            .main__banner-body-text {
+                @include font(15px, 400, 20px);
+                margin: 24px 0;
+            }
+
+            .main__banner-body-button {
+                background: #000;
+                color: #fff;
+                width: 150px;
+                text-align: center;
+                padding: 10px 20px;
+                text-decoration: none;
+
+                span {
+                    @include font(15px, 700, inherit);
+                    margin-right: 5px;
+                    padding-bottom: 1px;
+                    transition: 0.2s;
+                }
+            }
+
+            .main__banner-body-button:hover span {
+                border-bottom: 2px solid #fff;
+                margin-right: 10px;
+            }
+
+        }
+    }
+
+    .main__articles {
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 50px;
+
+        .main__articles-card {
+            width: 265px;
+            cursor: pointer;
+
+            .main__articles-card-image {
+                width: 265px;
+            }
+
+            .main__articles-card-title {
+                @include font(20px, 600, 28px);
+                margin-top: 40px;
+            }
+
+            .main__articles-card-text {
+                @include font(15px, 300, 18px);
+                margin: 5px 0 10px 0;
+            }
+
+            .main__articles-card-link {
+                text-decoration: none;
+                color: #0067b8;
+
+
+                span {
+                    @include font(15px, 600, inherit);
+                    margin-right: 5px;
+                    padding-bottom: 1px;
+                    transition: 0.2s;
+                }
+            }
+
+            .main__articles-card-link:hover span {
+                border-bottom: 2px solid #0067b8;
+                margin-right: 10px;
+            }
+        }
+
+        .main__articles-card:hover {
+            .main__articles-card-image {
+                opacity: 90%;
+            }
+        }
+    }
+
+    .main__title-for-work {
+        @include font(24px, 600, 28px);
+        margin-bottom: 20px;
+    }
+
+    .main__social {
+        margin-bottom: 50px;
+
+        .main__social-text {
+            @include font(15px, 200, inherit);
+            color: rgba(0,0,0,.6);
+        }
+
+        .main__social-link {
+            margin-left: 15px;
+
+            img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        .main__social-link:hover {
+            img {
+                filter: brightness(80%);
+                outline: none;
+            }
+        }
+    }
+}
+
+/* Футер сайта */
+
+.footer {
+    background: $background;
+    @extend %padding;
+    justify-content: flex-start;
+    word-wrap: break-word;
+
+    .footer__menus {
+        padding: 40px 0;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+
+        .footer__menus_menu {
+            width: 150px;
+
+            .footer__menus_menu-title {
+                @include font(15px, 600, 20px);
+                color: #616161;
+            }
+
+            .footer__menus_menu-items {
+                .footer__menus_menu-items_item {
+                    padding-top: 14px;
+
+                    .footer__menus_menu-items_item-link {
+                        @extend %footer-link;
+                    }
+
+                    .footer__menus_menu-items_item-link:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer__last-line {
+        padding: 20px 0;
+
+        ul {
+            justify-content: flex-end;
+
+            .footer__last-line-item {
+                @extend %footer-link;
+                margin-left: 30px;
+
+                .footer__last-line-item-link {
+                    @extend %footer-link;
+                }
+
+                .footer__last-line-item-link:hover {
+                    text-decoration: underline;
+                }
+
+                .footer__last-line-item-link i {
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+            }
+
+            .footer__last-line-item:first-child {
+                margin-right: auto;
+                margin-left: 0;
+            }
+        }
+    }
+}

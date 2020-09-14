@@ -1,0 +1,103 @@
+$main-red: #bf0005;
+$grey-text: #686868;
+$main-font: Arial, Helvetica, sans-serif;
+
+
+
+@mixin border {
+    border: 2px solid #f4f4f6;
+}
+
+@mixin shadow {
+    box-shadow: 0 0 5px 1px #686868;
+}
+
+@mixin flex-column-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-centered {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+* {
+    font-family: $main-font;
+}
+
+.main {
+    width: 100%;
+    @include flex-column-centered;
+}
+
+h1 {
+    color: $main-red;
+    font-weight: 700;
+}
+
+.cards {
+    @include flex-row-centered;
+    justify-content: space-around;
+    width: 1000px;
+
+    .cards__card {
+        width: 300px;
+        height: 105%;
+        list-style-type: none;
+        @include flex-row-centered;
+
+        .cards__card-body {
+            width: 200px;
+            height: 100%;
+            @include border;
+            @include flex-column-centered;
+            justify-content: flex-start;
+            padding: 60px 20px;
+            transition: 0.5s;
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+
+            .name {
+                padding-top: 20px;
+                font-weight: 700;
+                font-size: 16px;
+            }
+
+            .name-title {
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 16px;
+                color: $main-red;
+            }
+
+            .cards__card-body-text {
+                padding: 20px 0 10px 0;
+                text-align: center;
+                width: 160px;
+            }
+
+            .cards__card-body-stars {
+                color: $main-red;
+                font-size: 12px;
+            }
+        }
+
+        .cards__card-body:hover {
+            width: 230px;
+            height: 105%;
+            outline: none;
+            @include shadow;
+        }
+    }
+}
